@@ -4,8 +4,7 @@ class AboutView extends React.Component{
     render(){
         return(
             <div>
-                 <Hero />
-                <h1>About Us</h1>
+                 <Hero text="About Us"/>
             </div>
         )
     }
