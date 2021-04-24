@@ -1,10 +1,15 @@
 import './App.css';
 import Navbar from './Components/Navbar'
+import Home from './Components/Home'
+import AboutView from './Components/AboutView'
+
+
 function App() {
   return (
     <div>
         <Navbar />
-        <h1>Hello fromm React 201</h1>
+        <Home />
+        <AboutView />
     </div>
   );
 }
