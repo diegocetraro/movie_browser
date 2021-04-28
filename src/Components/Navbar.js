@@ -31,7 +31,7 @@ class Navbar extends React.Component{
                     </li>
                     <li className="nav-item dropdown">
                         <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</Link>
-                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul className="dropdown-menu">
                             <li><Link className="dropdown-item" to="/">Action</Link></li>
                             <li><Link className="dropdown-item" to="/">Another action</Link></li>
                             <li><hr className="dropdown-divider" /></li>
