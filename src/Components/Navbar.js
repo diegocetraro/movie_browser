@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 class Navbar extends React.Component{
 
@@ -8,7 +8,7 @@ class Navbar extends React.Component{
 
         this.state = {
             updateSearchText: (e) =>{
-                console.log(e.target.value)
+                this.props.history.push(this.props.path)
                 this.props.setSearchText(e.target.value)
             }
         }
