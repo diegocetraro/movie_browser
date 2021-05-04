@@ -3,6 +3,9 @@ import Navbar from './Components/Navbar'
 import Home from './Components/Home'
 import AboutView from './Components/AboutView'
 import SearchView from './Components/SearchView'
+import GetId from './Components/GetId'
+import MovieView from './Components/MovieView'
+import { useParams } from 'react-router-dom'
 import { useState, useEffect, useReducer} from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom';
 
@@ -19,6 +22,8 @@ function App() {
 
   const history = useHistory()
   const path = '/search'
+
+ 
 
   useEffect( () =>{
     if(searchText){
@@ -43,8 +48,11 @@ function App() {
           <Route path="/about" component={AboutView}>
             <AboutView />
           </Route>
-          <Route path="/search" component={SearchView}>
+          <Route path="/search">
             <SearchView keyword={searchText} searchResults={searchResults} />
+          </Route>
+          <Route path='/movies/:id'>
+            <GetId />
           </Route>
         </Switch>
     </div>
