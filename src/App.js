@@ -4,9 +4,8 @@ import Home from './Components/Home'
 import AboutView from './Components/AboutView'
 import SearchView from './Components/SearchView'
 import GetId from './Components/GetId'
-import MovieView from './Components/MovieView'
-import { useParams } from 'react-router-dom'
-import { useState, useEffect, useReducer} from 'react'
+import NotFound from './Components/404Page'
+import { useState, useEffect} from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom';
 
 
@@ -20,6 +19,8 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchText, setSearchText] = useState('');
 
+  const [no_result_text, set_no_result_text] = useState('');
+
   const history = useHistory()
   const path = '/search'
 
@@ -27,12 +28,17 @@ function App() {
 
   useEffect( () =>{
     if(searchText){
-      fetch(`https://api.themoviedb.org/3/search/movie?api_key=ab166ff82684910ae3565621aea04d62&language=en-US&query=${searchText}&page=1&include_adult=false`)
+      fetch(`https://api.themoviedb.org/3/search/movie?api_key=d51758b8c051a653109be4d8e92fcdce&language=en-US&query=${searchText}&page=1&include_adult=false`)
       .then(response => response.json())
       .then(data =>{
-        if(data){
-          setSearchResults(data.results)
+        if(data.results.length == 0){
+          set_no_result_text(`No results were found for ${searchText}`)
+          setSearchResults([])
         }
+        if(data.results.length != 0){
+          setSearchResults(data.results)
+          set_no_result_text('')
+        }    
       })
     }
     
@@ -40,7 +46,7 @@ function App() {
   
   return (
     <div>
-        <Navbar searchText={searchText} setSearchText={setSearchText} history={history} path={path}/>
+        <Navbar searchText={searchText} setSearchText={setSearchText} history={history} path={path} />
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -49,10 +55,13 @@ function App() {
             <AboutView />
           </Route>
           <Route path="/search">
-            <SearchView keyword={searchText} searchResults={searchResults} />
+            <SearchView keyword={searchText} searchResults={searchResults} no_result_text={no_result_text} />
           </Route>
           <Route path='/movies/:id'>
             <GetId />
+          </Route>
+          <Route path=''>
+            <NotFound />
           </Route>
         </Switch>
     </div>

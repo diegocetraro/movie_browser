@@ -3,22 +3,28 @@ import Hero from './Hero';
 import MovieCard from './MovieCard'
 
 class SearchView extends React.Component{
-    constructor(props){
-        super(props)
-        
-    }
     
     render(){
-        const resultsHTML = this.props.searchResults.map( (obj,i) =>{
-            return <MovieCard key={i} movies={obj}/>
-        })
+        let resultsHTML = []
+        if(this.props.searchResults.length !== 0){
+            resultsHTML = this.props.searchResults.map( (obj,i) =>{
+                return <MovieCard key={i} movies={obj}/>
+            })
+        }
         const title = `You are searching for...${this.props.keyword}`
+        
         return (
             <div>
                 <Hero text={title}/>
                 <div className="container">
+                    {
+                        resultsHTML&&
+                        <div className="row">
+                            {resultsHTML}
+                        </div>
+                    }
                     <div className="row">
-                        {resultsHTML}
+                        <h1 className="fs-3 fw-2 my-5">{this.props.no_result_text}</h1>
                     </div>
                 </div>
             </div>

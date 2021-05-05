@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Navbar extends React.Component{
 
@@ -42,10 +42,10 @@ class Navbar extends React.Component{
                         <Link className="nav-link disabled" to="/" tabIndex="-1" aria-disabled="true">Coming Soon</Link>
                     </li>
                 </ul>
-                <form className="d-flex" action="/search">
+                <div className="d-flex">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={this.props.searchText} onChange={this.state.updateSearchText}/>
                     <button className="btn btn-outline-primary" type="submit">Search</button>
-                </form>
+                </div>
                 </div>
             </div>
         </nav>

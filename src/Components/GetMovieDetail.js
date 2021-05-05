@@ -26,6 +26,7 @@ const GetMovieDetail = ( id ) =>{
             return <MovieView movieDetail={movieDetail} /> 
         }
     }
+    
     return (
        renderMovieDetail()
     )
