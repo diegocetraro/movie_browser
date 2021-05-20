@@ -1,5 +1,5 @@
-import MovieView from './MovieView'
-import Hero from './Hero'
+import MovieView from '../MovieView'
+import Hero from '../Hero'
 import { useEffect, useState} from 'react'
 
 const GetMovieDetail = ( id ) =>{

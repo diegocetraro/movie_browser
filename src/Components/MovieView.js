@@ -7,7 +7,6 @@ class MovieView extends React.Component{
     render(){
 
         let posterPath = `https://image.tmdb.org/t/p/w500/${this.props.movieDetail.poster_path}`
-        console.log(posterPath)
         if(!this.props.movieDetail.poster_path){
             posterPath = `https://image.tmdb.org/t/p/w500/${this.props.movieDetail.backdrop_path}`
         }
