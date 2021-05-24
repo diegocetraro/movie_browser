@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from '../Hero'
+import Hero from '../Hero/Hero'
 class NotFound extends React.Component{
 
     render(){

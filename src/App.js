@@ -1,8 +1,8 @@
 import './App.css';
-import Navbar from './Components/Navbar'
-import Home from './Components/Home'
-import AboutView from './Components/AboutView'
-import SearchView from './Components/SearchView'
+import Navbar from './Components/Home/Navbar'
+import Home from './Components/Home/Home'
+import AboutView from './Components/About/AboutView'
+import SearchView from './Components/MovieComponent/SearchView'
 import GetId from './Components/GetIdComponents/GetId'
 import NotFound from './Components/404Components/404Page'
 import GetSearchedText from './Components/GetSearchedTextComponents/GetSearchedText'

@@ -1,6 +1,6 @@
 import React from "react";
-import Hero from './Hero';
-import MovieCard from './MovieCard'
+import Hero from '../Hero/Hero';
+import MovieCard from '../MovieComponent/MovieCard'
 
 class SearchView extends React.Component{
     

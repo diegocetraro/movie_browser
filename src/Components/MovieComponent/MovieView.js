@@ -1,6 +1,6 @@
 import React from "react";
-import Hero from './Hero'
-import generic_image from './images/1-11061_generic-icon-icons-matt-movie-symbol-video-compress.png'
+import Hero from '../Hero/Hero'
+import generic_image from '../images/1-11061_generic-icon-icons-matt-movie-symbol-video-compress.png'
 
 class MovieView extends React.Component{
     

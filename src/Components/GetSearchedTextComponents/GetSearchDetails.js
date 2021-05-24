@@ -1,5 +1,5 @@
 import ShowSearchDetail from './ShowSearchDetail'
-import Hero from '../Hero'
+import Hero from '../Hero/Hero'
 import { useEffect, useState} from 'react'
 
 const GetSearchDetails = ( id ) =>{

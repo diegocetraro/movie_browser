@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from './Hero'
+import Hero from '../Hero/Hero'
 class AboutView extends React.Component{
     render(){
         return(

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import generic_image from './images/1-11061_generic-icon-icons-matt-movie-symbol-video-compress.png'
+import generic_image from '../images/1-11061_generic-icon-icons-matt-movie-symbol-video-compress.png'
 
 class MovieCard extends React.Component{
 
