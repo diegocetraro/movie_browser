@@ -24,52 +24,52 @@ class Navbar extends React.Component{
         const searchTextURL = `/searchDetail/${this.props.searchText}`
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient p-3 shadow-lg">
-            <div className="container px-0  ">
-                <Link className="navbar-brand" to="/">Movie Browser</Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item">
-                        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/about">About Us</Link>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</Link>
-                        <ul className="dropdown-menu">
-                            <li><Link className="dropdown-item" to="/">Action</Link></li>
-                            <li><Link className="dropdown-item" to="/">Another action</Link></li>
-                            <li><hr className="dropdown-divider" /></li>
-                            <li><Link className="dropdown-item" to="/">Something else here</Link></li>
-                        </ul>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link disabled" to="/" tabIndex="-1" aria-disabled="true">Coming Soon</Link>
-                    </li>
-                </ul>
-                <div className="d-flex">
-                    <div className="input-group mb-3">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={this.props.searchText} onChange={this.state.updateSearchText} data-bs-toggle="dropdown"/>
-                        <Link className="btn btn-outline-primary rounded" to={searchTextURL}>Search</Link>
-                        {
-                            resultsHTML&&
+                <div className="container px-0  ">
+                    <Link className="navbar-brand" to="/">Movie Browser</Link>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/about">About Us</Link>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</Link>
                             <ul className="dropdown-menu">
-                                {resultsHTML}
+                                <li><Link className="dropdown-item" to="/">Action</Link></li>
+                                <li><Link className="dropdown-item" to="/">Another action</Link></li>
+                                <li><hr className="dropdown-divider" /></li>
+                                <li><Link className="dropdown-item" to="/">Something else here</Link></li>
                             </ul>
-                        }
-                            <div>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link disabled" to="/" tabIndex="-1" aria-disabled="true">Coming Soon</Link>
+                        </li>
+                    </ul>
+                    <div className="d-flex">
+                        <div className="input-group mb-3">
+                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={this.props.searchText} onChange={this.state.updateSearchText} data-bs-toggle="dropdown"/>
+                            <Link className="btn btn-outline-primary rounded" to={searchTextURL}>Search</Link>
+                            {
+                                resultsHTML&&
                                 <ul className="dropdown-menu">
-                                    <li>{this.props.no_result_text}</li>
+                                    {resultsHTML}
                                 </ul>
-                            </div>
+                            }
+                                <div>
+                                    <ul className="dropdown-menu">
+                                        <li>{this.props.no_result_text}</li>
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
-                </div>
-            </div>
-        </nav>
+            </nav>
         )
     }
 }

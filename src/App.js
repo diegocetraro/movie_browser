@@ -6,6 +6,7 @@ import SearchView from './Components/MovieComponent/SearchView'
 import GetId from './Components/GetIdComponents/GetId'
 import NotFound from './Components/404Components/404Page'
 import GetSearchedText from './Components/GetSearchedTextComponents/GetSearchedText'
+import Footer from './Components/Home/Footer'
 import { useState, useEffect} from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom';
 
@@ -68,6 +69,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+        <Footer />
     </div>
   );
 }
