@@ -16,13 +16,14 @@ const GetSearchDetails = ( id ) =>{
                 setTimeout( () =>{
                     set_no_result_text(`No results were found for ${id.id}`)
                     setSearchDetail([])
-                }, 1000)
+                    setIsLoading(false)
+                }, 100)
             }
             if(data.results.length !== 0){
                 setTimeout( () =>{
                     setSearchDetail(data.results)
                     setIsLoading(false)
-                }, 1000)
+                }, 100)
             }
             
         })

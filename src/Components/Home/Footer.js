@@ -12,8 +12,8 @@ class Footer extends React.Component{
             <div className="footer-container">
                 <div className="container-items">
                     <h1 className="container-title">LINKS</h1>
-                    <Link to="" className="footer-link">Home</Link>
-                    <Link to="" className="footer-link">About Us</Link>
+                    <Link to="/" className="footer-link">Home</Link>
+                    <Link to="/about" className="footer-link">About Me</Link>
                     <Link to="" className="footer-link">On Maintainence</Link>
                 </div>
                 <div className="container-items">
@@ -29,18 +29,18 @@ class Footer extends React.Component{
                 <div className="container-items">
                     <h1 className="container-title">SOCIALS</h1>
                     <div className="social-link">
-                        <a href="#">
+                        <Link to="https://www.facebook.com/juandiego.aranda.5/">
                             <img className="socials" src={facebook} alt="facebook" />
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link to="https://twitter.com/DJ_930708">
                             <img className="socials" src={twitter} alt="twitter" />
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link to="https://www.instagram.com/jd.notengoinsta/">
                             <img className="socials" src={instagram} alt="instagram" />
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link to="https://www.youtube.com/channel/UCIU9jJ5fPGLYjSyALLLwR4Q">
                             <img className="socials" src={youtube} alt="youtube" />
-                        </a>
+                        </Link>
                     </div>
                     <p className="footer-text">&copy; 2021 JDA All Rights Reserved.</p>
                 </div>

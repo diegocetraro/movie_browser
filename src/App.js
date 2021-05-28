@@ -20,7 +20,7 @@ function App() {
   
   const [searchResults, setSearchResults] = useState([]);
   const [searchText, setSearchText] = useState('');
-
+  const [popular, setPopular] = useState([])
   const [no_result_text, set_no_result_text] = useState('');
 
   const history = useHistory()
@@ -45,13 +45,25 @@ function App() {
     }
     
   }, [searchText])
+
+  useEffect(()=>{
+    if(popular.length === 0){
+      fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d51758b8c051a653109be4d8e92fcdce&language=en-US&page=1`)
+      .then(response => response.json())
+      .then(data =>{
+          setPopular(data.results)
+          console.log(data)
+      })
+    }
+    
+  },[popular])
   
   return (
     <div>
         <Navbar searchText={searchText} setSearchText={setSearchText} history={history} path={path} searchResults={searchResults} no_result_text={no_result_text} />
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <Home popular={popular}/>
           </Route>
           <Route path="/about" component={AboutView}>
             <AboutView />

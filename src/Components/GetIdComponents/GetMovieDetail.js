@@ -14,7 +14,7 @@ const GetMovieDetail = ( id ) =>{
             setTimeout( () =>{
                 setMovieDetail(data)
                 setIsLoading(false)
-            }, 1000)
+            }, 100)
         })
     }, [id.id])
     
